@@ -8,13 +8,17 @@ export default function Frame() {
     const [currentPage, setCurrentPage] = useState(0);
 
     const labels = [
-        ['Label 1', 'Label 2', 'Label 3', 'Label 4'],
-        ['Label 5', 'Label 6', 'Label 7', 'Label 8'],
-        ['Label 9', 'Label 10', 'Label 11', 'Label 12'],
+        ['Label', 'Label', 'Label', 'Label'],
+        ['Label', 'Label', 'Label', 'Label'],
+        ['Label', 'Label', 'Label', 'Label'],
     ];
 
     const handleNext = () => {
         if (currentPage < 2) setCurrentPage(currentPage + 1);
+    }
+
+    const handlePrevious = () => {
+        if (currentPage > 0) setCurrentPage(currentPage - 1);
     }
 
     return (
@@ -24,7 +28,7 @@ export default function Frame() {
                 style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}
             >
                 <div className="flex">
-                    <div className="flex justify-start text-black mt-3 ml-4">
+                    <div className="flex justify-start text-black mt-3 ml-4" onClick={handlePrevious} style={{ cursor: currentPage === 0 ? 'not-allowed' : 'pointer' }}>
                         <Image
                             src="/chevron-left.svg"
                             alt="chevron-left"
@@ -47,7 +51,7 @@ export default function Frame() {
 
                 <button onClick={handleNext}
                     disabled={currentPage === 2}
-                    className="bg-black hover:bg-black text-white w-[568px] h-[48px] ml-[12px] mt-[100px] px-4 py-2 rounded p-4">
+                    className="bg-black hover:bg-black text-white w-[568px] h-[48px] ml-[12px] mt-[80px] px-4 py-2 rounded p-4">
                     Next Step
                 </button>
             </div>
