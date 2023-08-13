@@ -1,11 +1,14 @@
 'use client'
-
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import Image from "next/image";
 
+
+
 export default function Frame() {
     const [currentPage, setCurrentPage] = useState(0);
+    const router = useRouter();
 
     const labels = [
         ['Label', 'Label', 'Label', 'Label'],
@@ -14,7 +17,12 @@ export default function Frame() {
     ];
 
     const handleNext = () => {
-        if (currentPage < 2) setCurrentPage(currentPage + 1);
+        if (currentPage < 2) {
+            setCurrentPage(currentPage + 1);
+        } else {
+            // 3. adım sonrası yönlendirme
+            router.push('/signup');
+        }
     }
 
     const handlePrevious = () => {
@@ -34,6 +42,7 @@ export default function Frame() {
                             alt="chevron-left"
                             width={46}
                             height={46}
+                            priority={true}
                         />
                     </div>
                     <h1 className="text-black mt-4 ml-[12rem] justify-center">HEADER</h1>
@@ -50,7 +59,7 @@ export default function Frame() {
                 </div>
 
                 <button onClick={handleNext}
-                    disabled={currentPage === 2}
+                    disabled={currentPage === 3}
                     className="bg-black hover:bg-black text-white w-[568px] h-[48px] ml-[12px] mt-[80px] px-4 py-2 rounded p-4">
                     Next Step
                 </button>
