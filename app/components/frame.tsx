@@ -58,11 +58,14 @@ export default function Frame() {
                     ))}
                 </div>
 
-                <button onClick={handleNext}
+                <button 
+                    onClick={handleNext}
                     disabled={currentPage === 3}
-                    className="bg-black hover:bg-black text-white w-[568px] h-[48px] ml-[12px] mt-[80px] px-4 py-2 rounded p-4">
-                    Next Step
+                    className="bg-black hover:bg-black text-white w-[568px] h-[48px] ml-[12px] mt-[80px] px-4 py-2 rounded p-4"
+                >
+                    {currentPage === 2 ? 'Sign Up' : 'Next Step'}
                 </button>
+
             </div>
         </section>
     );

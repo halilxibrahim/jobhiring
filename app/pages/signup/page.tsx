@@ -1,7 +1,8 @@
 import Link from "next/link"
-import Frame from "../components/frame"
-import Navbar from "../components/navbar"
-export default function Onboard() {
+import Frame from "../../components/frame"
+import Navbar from "../../components/navbar"
+
+export default function SignUp() {
     return (
 
     <div className="min-h-screen bg-white">

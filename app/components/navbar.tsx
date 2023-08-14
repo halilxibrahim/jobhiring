@@ -7,12 +7,16 @@ export default function Navbar() {
                 <div className="font-roboto text-xl font-semibold text-black">ACME</div>
             </Link>
         <div>
-            <button className="font-kalam text-lg text-black line-leading-29 text-left mr-6">
-            Login
-            </button>
-            <button className="bg-black hover:bg-black text-white px-4 py-2 rounded">
-            Sign Up
-            </button>
+            <Link href="/pages/login">
+                <button className="font-kalam text-lg text-black line-leading-29 text-left mr-6">
+                Login
+                </button>
+            </Link>
+            <Link href="/pages/signup">
+                <button className="bg-black hover:bg-black text-white px-4 py-2 rounded">
+                Sign Up
+                </button>
+            </Link>
         </div>
         </nav>
   )

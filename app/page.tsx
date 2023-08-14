@@ -14,7 +14,7 @@ export default function Home() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div className="flex justify-center items-center h-screen ml-[5rem]">
-            <Link href="/onboard">
+            <Link href="/pages/signup">
               <button className="bg-black hover:bg-black text-white px-4 py-2 rounded w-[280px] h-[64px] border-r"> 
                 Start free trial
               </button>
